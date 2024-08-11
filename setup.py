@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Topsis-Devansh-102218067',
+    name='topsis-Devansh-102218067',
     version='0.1',
     description='A Python package for TOPSIS',
     long_description=open('README.md').read(),
