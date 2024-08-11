@@ -22,17 +22,10 @@
 
 ### Installation Commands
 
-To install the package locally, follow these steps:
+To install the package locally:
 
 ```sh
-# Clone the repository (if not already done)
-git clone https://github.com/yourusername/Topsis-Devansh-102218067.git
-
-# Navigate to the package directory
-cd Topsis-Devansh-102218067
-
-# Install the package using pip
-pip install .
+pip install Topsis-Devansh-102218067
 ```
 
 Once installed, the `topsis` command will be available for use in your command line.
@@ -44,7 +37,7 @@ Once installed, the `topsis` command will be available for use in your command l
 You can run the TOPSIS analysis using the `topsis` command. The syntax is as follows:
 
 ```sh
-topsis <inputFileName> <weights> <impacts> <resultFileName>
+topsis <InputFileName> <weights> <impacts> <OutputFileName>
 ```
 
 - **inputFileName**: Path to the input CSV file containing the data.
@@ -57,7 +50,7 @@ topsis <inputFileName> <weights> <impacts> <resultFileName>
 Suppose you have a CSV file named `data.csv` with the following structure:
 
 ```csv
-Alternative,C1,C2,C3,C4
+Ind,C1,C2,C3,C4
 A1,250,16,12,5
 A2,200,25,8,3
 A3,300,20,10,4
@@ -74,14 +67,14 @@ This command will generate a `result.csv` file with the TOPSIS scores and ranks.
 
 ## Input File Format
 
-- The input file must be in CSV format.
+- The input file MUST be in CSV format.
 - The first column should contain labels for the alternatives (e.g., "A1", "A2").
 - The remaining columns should contain numeric data for the criteria.
 
 Example:
 
 ```csv
-Alternative,C1,C2,C3,C4
+Ind,C1,C2,C3,C4
 A1,250,16,12,5
 A2,200,25,8,3
 A3,300,20,10,4
@@ -98,7 +91,7 @@ The output file will be a CSV file with the original data plus two additional co
 Example:
 
 ```csv
-Alternative,C1,C2,C3,C4,Topsis Score,Rank
+Ind,C1,C2,C3,C4,Topsis Score,Rank
 A1,250,16,12,5,0.68,2
 A2,200,25,8,3,0.55,4
 A3,300,20,10,4,0.78,1
@@ -111,15 +104,11 @@ The program includes robust error handling for common issues:
 
 - **File Not Found**: An error message will be displayed if the input file is missing.
 - **Non-Numeric Data**: The program will check for non-numeric data in criteria columns.
-- **Mismatched Weights and Impacts**: The number of weights and impacts must match the number of criteria.
-- **Invalid Impacts**: Impacts must be either `'+'` or `'-'`.
+- **Unequal Weights and Impacts**: The number of weights and impacts must match the number of criteria.
+- **Incorrect Impacts**: Impacts must be either `'+'` or `'-'`.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
-
-### Summary
-
-This `README.md` file provides users with all the necessary information to install, use, and understand your TOPSIS package. Make sure to replace `"yourusername"` in the GitHub link with your actual username if you eventually decide to host the package on GitHub. If you don't plan to include a GitHub repository, simply omit that part of the installation section.
