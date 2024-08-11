@@ -1,3 +1,12 @@
+Metadata-Version: 2.1
+Name: Topsis-Devansh-102218067
+Version: 0.1
+Summary: A Python package for TOPSIS
+Author: Devansh Arya
+Author-email: Dv30arya@gmail.com
+License: MIT
+Description-Content-Type: text/markdown
+
 # Topsis-Devansh-102218067
 
 **Topsis-Devansh-102218067** is a Python package for performing TOPSIS (Technique for Order of Preference by Similarity to Ideal Solution), a multi-criteria decision-making method. This package is designed to help rank alternatives based on their distance from an ideal solution.
@@ -25,7 +34,7 @@
 To install the package locally:
 
 ```sh
-pip install Topsis-Devansh-102218067==0.1
+pip install Topsis-Devansh-102218067
 ```
 
 Once installed, the `topsis` command will be available for use in your command line.
