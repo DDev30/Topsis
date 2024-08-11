@@ -22,6 +22,5 @@ setup(
         'pandas',
         'argparse',
         'scipy',
-        'sys',
     ],
 )
