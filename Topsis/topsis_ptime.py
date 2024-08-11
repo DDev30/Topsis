@@ -2,13 +2,14 @@ import numpy as np
 import pandas as pd
 import argparse
 import sys
+from scipy.stats import rankdata
 
 def topsis_forcsv(infile, weights, impacts, oufile):
     try:
         
         df = pd.read_csv(infile)
     except FileNotFoundError:
-        print(f"Error: File '{infile}' not found.")
+        print(f"Error: File '{infile}' not found!!")
         sys.exit(1)
 
     
@@ -16,12 +17,12 @@ def topsis_forcsv(infile, weights, impacts, oufile):
 
     
     if not np.issubdtype(data.to_numpy().dtype, np.number):
-        print("Error: All columns must be numeric.")
+        print("Error: All columns must be numeric!!")
         sys.exit(1)
 
     
     if len(weights) != len(impacts) or len(weights) != data.shape[1]:
-        print("Error: The number of weights, impacts, and columns are not equal.")
+        print("Error: The number of weights, impacts, and columns are not equal!!")
         sys.exit(1)
 
     
@@ -43,8 +44,7 @@ def topsis_forcsv(infile, weights, impacts, oufile):
     t_score = d_worst / (d_best + d_worst)
 
     
-    ranks = np.argsort(t_score)[::-1] + 1
-
+    ranks = rankdata(-t_score, method='min')
     
     df["Topsis Score"] = t_score
     df["Rank"] = ranks
@@ -55,11 +55,11 @@ def topsis_forcsv(infile, weights, impacts, oufile):
     return t_score, ranks
 
 def main():
-    parser = argparse.ArgumentParser(description="Topsis method for csv")
-    parser.add_argument("inputfile", type=str, help="input CSV file")
-    parser.add_argument("weights", type=str, help="weights separated by commas, e.g., '0.25,0.25,0.25,0.25'.")
-    parser.add_argument("impacts", type=str, help="impacts separated by commas ('+' or '-'), e.g., '+,+,-,+'.")
-    parser.add_argument("outputfile", type=str, help="output CSV file")
+    parser = argparse.ArgumentParser()
+    parser.add_argument("inputfile", type=str)
+    parser.add_argument("weights", type=str)
+    parser.add_argument("impacts", type=str)
+    parser.add_argument("outputfile", type=str)
 
     args = parser.parse_args()
 
@@ -67,7 +67,7 @@ def main():
     try:
         weights = [float(w) for w in args.weights.split(',')]
     except ValueError:
-        print("Error: Make sure weights are numeric values only and separated by commas")
+        print("Error: Weights must be numeric and separated by commas!!!")
         sys.exit(1)
 
     impacts = args.impacts.split(',')
