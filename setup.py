@@ -20,5 +20,8 @@ setup(
     install_requires=[
         'numpy',
         'pandas',
+        'argparse',
+        'scipy',
+        'sys',
     ],
 )
