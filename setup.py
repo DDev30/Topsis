@@ -14,7 +14,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'Topsis=topsis.topsis_ptime:main',
+            'Topsis=topsis.topsis:main',
         ],
     },
     install_requires=[
