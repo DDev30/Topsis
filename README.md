@@ -37,7 +37,7 @@ Once installed, the `topsis` command will be available for use in your command l
 You can run the TOPSIS analysis using the `topsis` command. The syntax is as follows:
 
 ```sh
-topsis <InputFileName> <weights> <impacts> <OutputFileName>
+topsis <weights> <impacts> <InputFileName> <OutputFileName>
 ```
 
 - **inputFileName**: Path to the input CSV file containing the data.
@@ -60,7 +60,7 @@ A4,275,22,9,4.5
 You can run the TOPSIS analysis with:
 
 ```sh
-topsis data.csv "0.3,0.2,0.4,0.1" "+,+,-,+," result.csv
+topsis "0.3,0.2,0.4,0.1" "+,+,-,+," data.csv result.csv
 ```
 
 This command will generate a `result.csv` file with the TOPSIS scores and ranks.

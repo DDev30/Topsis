@@ -4,7 +4,7 @@ import argparse
 import sys
 from scipy.stats import rankdata
 
-def topsis_forcsv(infile, weights, impacts, oufile):
+def topsis_forcsv(weights, impacts, infile, oufile):
     try:
         
         df = pd.read_csv(infile)
@@ -56,9 +56,9 @@ def topsis_forcsv(infile, weights, impacts, oufile):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("inputfile", type=str)
     parser.add_argument("weights", type=str)
     parser.add_argument("impacts", type=str)
+    parser.add_argument("inputfile", type=str)
     parser.add_argument("outputfile", type=str)
 
     args = parser.parse_args()

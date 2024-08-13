@@ -1,1 +1,1 @@
-from .topsis import topsis_forcsv,main
+from __main__ import topsis_forcsv,main
