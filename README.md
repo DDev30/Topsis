@@ -25,7 +25,7 @@
 To install the package locally:
 
 ```sh
-pip install Topsis-Devansh-102218067
+pip install topsis-Devansh-102218067
 ```
 
 Once installed, the `topsis` command will be available for use in your command line.
@@ -37,7 +37,7 @@ Once installed, the `topsis` command will be available for use in your command l
 You can run the TOPSIS analysis using the `topsis` command. The syntax is as follows:
 
 ```sh
-topsis <weights> <impacts> <InputFileName> <OutputFileName>
+Topsis <weights> <impacts> <InputFileName> <OutputFileName>
 ```
 
 - **inputFileName**: Path to the input CSV file containing the data.
